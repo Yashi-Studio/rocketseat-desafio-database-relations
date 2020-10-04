@@ -78,10 +78,10 @@ class CreateOrderService {
       customer: customerExist,
     });
 
-    const orderProductsQuantity = products.map(product => ({
-      id: product.id,
+    const orderProductsQuantity = order.order_products.map(product => ({
+      id: product.product_id,
       quantity:
-        existentProducts.filter(p => p.id === product.id)[0].quantity -
+        existentProducts.filter(p => p.id === product.product_id)[0].quantity -
         product.quantity,
     }));
 
